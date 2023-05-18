@@ -29,15 +29,17 @@ WHERE customer_id IN (
 
 
 -- 4. List all customers that live in Nepal (use the city table)
-SELECT customer.first_name, customer.last_name, city
+SELECT customer.first_name, customer.last_name, country
 FROM customer
 INNER JOIN address
 ON customer.address_id = address.address_id
 INNER JOIN city
 ON address.city_id = city.city_id
-WHERE city = 'Nepal';
--- Answer: No Data
-
+INNER JOIN country
+ON city.country_id = country.country_id
+WHERE country = 'Nepal';
+-- Answer: Kevin Schuler
+select country from country
 
 -- 5. Which staff member had the most transactions?
 SELECT staff.first_name, staff.last_name, COUNT(rental_id)

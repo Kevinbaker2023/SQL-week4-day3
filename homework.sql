@@ -39,7 +39,6 @@ INNER JOIN country
 ON city.country_id = country.country_id
 WHERE country = 'Nepal';
 -- Answer: Kevin Schuler
-select country from country
 
 -- 5. Which staff member had the most transactions?
 SELECT staff.first_name, staff.last_name, COUNT(rental_id)
